@@ -12,8 +12,8 @@ loadgen ──> order-api :8080 ──> payment-svc :8081 ──> payment gatewa
 
 ## Requirements
 
-- Node.js 22 or later
-- Go 1.22 or later
+- Node.js 22 or later (tested with 22 and 24)
+- Go 1.24 or later (binaries built with Go 1.22 fail to start on macOS 26 with `missing LC_UUID`)
 
 ## Run
 
@@ -24,9 +24,12 @@ cd order-api && npm install && cd ..
 
 Ctrl-C stops everything.
 
+Open http://localhost:8080/ for the shop UI: order from the menu and watch recent orders (including the load generator's) update live.
+
 ## API
 
 - `POST /orders` with `{"customerId": "c-1", "items": [{"sku": "latte", "qty": 1}]}`
+- `GET /orders?limit=20` (most recent first)
 - `GET /orders/:id`
 
 SKUs: `coffee`, `latte`, `sandwich`, `cake`

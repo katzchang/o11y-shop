@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>恐怖の喫茶 o11y</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- shared paint for the illustrations -->
+  <svg class="defs" width="0" height="0" aria-hidden="true">
+    <defs>
+      <pattern id="tone" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <circle cx="2.5" cy="2.5" r="1.1" fill="#111"/>
+      </pattern>
+      <pattern id="tone-dense" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <circle cx="2" cy="2" r="1.5" fill="#111"/>
+      </pattern>
+      <pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+        <line x1="0" y1="0" x2="0" y2="4" stroke="#111" stroke-width="1.2"/>
+      </pattern>
+      <pattern id="stripe" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+        <rect width="4" height="8" fill="#c8102e"/>
+        <rect x="4" width="4" height="8" fill="#fff"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <h1 class="title">
+      <span class="title-kicker">恐怖の</span>
+      <span class="title-main">喫茶 <span class="title-latin">o11y</span></span>
+    </h1>
+    <svg class="blood-bar" viewBox="0 0 640 64" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 0H640V12H0Z"/>
+      <path d="M28 10C31.6 14 30.4 24 29.8 30a4.2 4.2 0 0 0 8.4 0C37.6 24 36.4 14 40 10Z"/>
+      <path d="M88 10C92.8 14 91.2 42 90.4 48a5.6 5.6 0 0 0 11.2 0C100.8 42 99.2 14 104 10Z"/>
+      <path d="M150 10C153 14 152 16 151.5 22a3.5 3.5 0 0 0 7 0C158 16 157 14 160 10Z"/>
+      <path d="M200 10C204.2 14 202.8 32 202.1 38a4.9 4.9 0 0 0 9.8 0C211.2 32 209.8 14 214 10Z"/>
+      <path d="M258 10C263.4 14 261.6 46 260.7 52a6.3 6.3 0 0 0 12.6 0C272.4 46 270.6 14 276 10Z"/>
+      <path d="M326 10C329.3 14 328.2 20 327.65 26a3.85 3.85 0 0 0 7.7 0C334.8 20 333.7 14 337 10Z"/>
+      <path d="M374 10C378.8 14 377.2 36 376.4 42a5.6 5.6 0 0 0 11.2 0C386.8 36 385.2 14 390 10Z"/>
+      <path d="M440 10C443.6 14 442.4 26 441.8 32a4.2 4.2 0 0 0 8.4 0C449.6 26 448.4 14 452 10Z"/>
+      <path d="M494 10C499.4 14 497.6 44 496.7 50a6.3 6.3 0 0 0 12.6 0C508.4 44 506.6 14 512 10Z"/>
+      <path d="M560 10C563 14 562 18 561.5 24a3.5 3.5 0 0 0 7 0C568 18 567 14 570 10Z"/>
+      <path d="M600 10C604.2 14 602.8 30 602.1 36a4.9 4.9 0 0 0 9.8 0C611.2 30 609.8 14 614 10Z"/>
+    </svg>
+    <p class="tagline">いらっしゃいませ……今日も……決済は……ちゃんと……通るかしら……</p>
+    <span class="sfx sfx-left" aria-hidden="true">ゴゴゴゴ</span>
+    <span class="sfx sfx-right" aria-hidden="true">ゾゾッ</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel menu" aria-labelledby="menu-heading">
+      <h2 id="menu-heading" class="panel-heading">お品書き</h2>
+      <div class="menu-grid">
+
+        <article class="dish" data-sku="coffee">
+          <svg viewBox="0 0 120 120" class="dish-art" aria-hidden="true">
+            <g fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round">
+              <path d="M48 36C38 28 58 22 46 10"/>
+              <path d="M64 36C74 26 56 20 68 6"/>
+              <path d="M78 34C84 28 76 24 82 16" stroke-width="1.8"/>
+            </g>
+            <ellipse cx="60" cy="100" rx="46" ry="10" fill="#fff" stroke="#111" stroke-width="3"/>
+            <ellipse cx="60" cy="97" rx="28" ry="5" fill="#111"/>
+            <path d="M90 56C110 54 110 84 86 84" fill="none" stroke="#111" stroke-width="8"/>
+            <path d="M90 56C110 54 110 84 86 84" fill="none" stroke="#fff" stroke-width="2.5"/>
+            <path d="M28 46L35 90Q60 102 85 90L92 46Z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M74 52L91 47L85 89Q80 93 76 95Z" fill="url(#tone)"/>
+            <ellipse cx="60" cy="46" rx="32" ry="8" fill="#fff" stroke="#111" stroke-width="3"/>
+            <ellipse cx="60" cy="47" rx="27" ry="5.5" fill="#111"/>
+            <path d="M44 46Q52 44 60 45" stroke="#fff" stroke-width="1.5" fill="none"/>
+            <path d="M40 51C40 58 38 64 40 70C41 76 46 76 46 70C46 64 44 60 45 52Z" fill="#111"/>
+            <path d="M66 54C66 58 65 60 66 63C67 67 70 66 70 63C70 60 69 57 69 54Z" fill="#111"/>
+          </svg>
+          <h3 class="dish-name">コーヒー</h3>
+          <p class="dish-note">底なしの黒</p>
+          <p class="dish-price">¥450</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-delta="-1" aria-label="コーヒーを減らす">－</button>
+            <output class="qty-count" aria-live="polite">0</output>
+            <button type="button" class="qty-btn" data-delta="1" aria-label="コーヒーを増やす">＋</button>
+          </div>
+        </article>
+
+        <article class="dish" data-sku="latte">
+          <svg viewBox="0 0 120 120" class="dish-art" aria-hidden="true">
+            <defs>
+              <clipPath id="latte-glass"><path d="M36 22L42 104Q60 110 78 104L84 22Z"/></clipPath>
+            </defs>
+            <ellipse cx="60" cy="108" rx="28" ry="4" fill="#111"/>
+            <path d="M66 30L86 2" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+            <path d="M66 30L86 2" stroke="url(#stripe)" stroke-width="5.5" stroke-linecap="round"/>
+            <g clip-path="url(#latte-glass)">
+              <rect x="30" y="20" width="60" height="90" fill="#fff"/>
+              <rect x="30" y="40" width="60" height="44" fill="url(#tone)"/>
+              <path d="M30 82Q42 72 54 80T78 80T102 78V120H30Z" fill="#111"/>
+              <path d="M30 40H90" stroke="#111" stroke-width="1.5"/>
+              <path d="M43 30L47 98" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+            </g>
+            <path d="M36 22L42 104Q60 110 78 104L84 22" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="60" cy="22" rx="24" ry="5" fill="#fff" stroke="#111" stroke-width="3"/>
+            <path d="M60 25.5C53 21.5 52 18.5 55.5 18.5C57.5 18.5 59 20 60 21C61 20 62.5 18.5 64.5 18.5C68 18.5 67 21.5 60 25.5Z" fill="#111"/>
+          </svg>
+          <h3 class="dish-name">ラテ</h3>
+          <p class="dish-note">白と黒の境界</p>
+          <p class="dish-price">¥550</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-delta="-1" aria-label="ラテを減らす">－</button>
+            <output class="qty-count" aria-live="polite">0</output>
+            <button type="button" class="qty-btn" data-delta="1" aria-label="ラテを増やす">＋</button>
+          </div>
+        </article>
+
+        <article class="dish" data-sku="sandwich">
+          <svg viewBox="0 0 120 120" class="dish-art" aria-hidden="true">
+            <ellipse cx="60" cy="100" rx="48" ry="5" fill="#111"/>
+            <rect x="18" y="56" width="84" height="40" fill="#fff"/>
+            <path d="M18 66Q24 61 30 66T42 66T54 66T66 66T78 66T90 66T102 66V72H18Z" fill="url(#tone-dense)" stroke="#111" stroke-width="2"/>
+            <path d="M18 72H102V79Q96 82 90 79T78 79T66 79T54 79T42 79T30 79T18 79Z" fill="#c8102e" stroke="#111" stroke-width="2"/>
+            <rect x="18" y="79" width="84" height="7" fill="url(#hatch)"/>
+            <path d="M18 86H102" stroke="#111" stroke-width="2"/>
+            <rect x="76" y="56" width="26" height="10" fill="url(#tone)"/>
+            <rect x="76" y="86" width="26" height="10" fill="url(#tone)"/>
+            <rect x="18" y="56" width="84" height="40" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M18 56L60 26L102 56Z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M28 53L60 31L92 53Z" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M44 78C44 86 42 92 44 100C45 107 51 107 51 100C51 94 48 86 49 78Z" fill="#c8102e" stroke="#111" stroke-width="1.5"/>
+          </svg>
+          <h3 class="dish-name">サンドイッチ</h3>
+          <p class="dish-note">挟まれた何か</p>
+          <p class="dish-price">¥780</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-delta="-1" aria-label="サンドイッチを減らす">－</button>
+            <output class="qty-count" aria-live="polite">0</output>
+            <button type="button" class="qty-btn" data-delta="1" aria-label="サンドイッチを増やす">＋</button>
+          </div>
+        </article>
+
+        <article class="dish" data-sku="cake">
+          <svg viewBox="0 0 120 120" class="dish-art" aria-hidden="true">
+            <defs>
+              <clipPath id="cake-berries"><rect x="22" y="74" width="76" height="8"/></clipPath>
+            </defs>
+            <ellipse cx="60" cy="100" rx="46" ry="5" fill="#111"/>
+            <rect x="22" y="56" width="76" height="40" fill="#fff"/>
+            <rect x="22" y="62" width="76" height="12" fill="url(#tone)"/>
+            <g clip-path="url(#cake-berries)" fill="#c8102e" stroke="#111" stroke-width="1.5">
+              <circle cx="32" cy="82" r="6"/><circle cx="50" cy="82" r="6"/>
+              <circle cx="70" cy="82" r="6"/><circle cx="88" cy="82" r="6"/>
+            </g>
+            <rect x="22" y="82" width="76" height="14" fill="url(#tone)"/>
+            <path d="M22 62H98M22 74H98M22 82H98" stroke="#111" stroke-width="2"/>
+            <rect x="22" y="56" width="76" height="40" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M22 56L60 30L98 56Z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M46 44C44 36 52 30 58 34C60 26 72 28 70 36C78 36 76 46 70 46Z" fill="#fff" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M60 50C49 46 49 32 60 32C71 32 71 46 60 50Z" fill="#c8102e" stroke="#111" stroke-width="2.5"/>
+            <path d="M53 32L57 27L60 31L63 27L67 32" fill="#111" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+            <g fill="#fff"><circle cx="56" cy="38" r=".9"/><circle cx="63" cy="37" r=".9"/><circle cx="59" cy="43" r=".9"/><circle cx="65" cy="42" r=".9"/></g>
+            <path d="M58 48C58 56 55 62 56 70C56 80 55 86 57 90C58 95 63 95 63 90C63 84 62 74 63 64C63 56 63 52 62 48Z" fill="#c8102e" stroke="#111" stroke-width="1.5"/>
+          </svg>
+          <h3 class="dish-name">ケーキ</h3>
+          <p class="dish-note">いちごの…しずく…</p>
+          <p class="dish-price">¥520</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-delta="-1" aria-label="ケーキを減らす">－</button>
+            <output class="qty-count" aria-live="polite">0</output>
+            <button type="button" class="qty-btn" data-delta="1" aria-label="ケーキを増やす">＋</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="panel counter" aria-labelledby="counter-heading">
+      <h2 id="counter-heading" class="panel-heading">お会計</h2>
+      <p class="total">合計 <strong id="total">¥0</strong></p>
+      <button type="button" id="order-btn" class="order-btn" disabled>注文する</button>
+      <div id="result" class="result" data-state="idle" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="panel ledger" aria-labelledby="ledger-heading">
+      <div class="ledger-head">
+        <h2 id="ledger-heading" class="panel-heading">今夜の注文</h2>
+        <p id="omen" class="omen"></p>
+      </div>
+      <div class="table-wrap">
+        <table class="orders">
+          <thead>
+            <tr><th>時刻</th><th>客</th><th>品</th><th class="num">金額</th><th class="num">所要</th><th>状態</th></tr>
+          </thead>
+          <tbody id="orders"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">※ 当店の決済は、遠い遠い外部ゲートウェイに委ねられております。</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

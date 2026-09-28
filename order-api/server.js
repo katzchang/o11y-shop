@@ -1,5 +1,6 @@
 const express = require('express');
 const crypto = require('node:crypto');
+const path = require('node:path');
 const { trace } = require('@opentelemetry/api');
 
 const PORT = Number(process.env.PORT || 8080);
@@ -8,6 +9,7 @@ const PAYMENT_TIMEOUT_MS = Number(process.env.PAYMENT_TIMEOUT_MS || 1000);
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // request info for the tracing backend
 app.use((req, res, next) => {
@@ -69,13 +71,21 @@ app.post('/orders', async (req, res) => {
     const charge = await resp.json();
     order.status = 'paid';
     order.chargeId = charge.id;
+    order.settledAt = new Date().toISOString();
     console.log(`order ${order.id} paid (${amount} JPY)`);
     return res.status(201).json(order);
   } catch (err) {
     order.status = 'payment_failed';
+    order.settledAt = new Date().toISOString();
     console.error(`order ${order.id} payment error: ${err.message}`);
     return res.status(502).json({ error: 'payment failed', orderId: order.id });
   }
+});
+
+// most recent orders first
+app.get('/orders', (req, res) => {
+  const limit = Math.min(Number(req.query.limit) || 20, 100);
+  res.json([...orders.values()].slice(-limit).reverse());
 });
 
 app.get('/orders/:id', (req, res) => {
